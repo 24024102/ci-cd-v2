@@ -31,7 +31,7 @@ def read_root():
         <body>
             <div class="card">
                 <h1>🚀 K8s Web Cluster</h1>
-                <p>Количество посещений:</p>
+                <p>XDXDXDXD:</p>
                 <div class="counter">{hits}</div>
                 <p>Ваш запрос обработал Pod:</p>
                 <div class="pod-name">{pod_name}</div>
