@@ -1,7 +1,6 @@
 containers:
       - name: fastapi
-        
-        image:24024102/ci-cd-v2:latest
+        image: 24024102/ci-cd-v2:latest
         
       
         imagePullPolicy: Always
