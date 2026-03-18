@@ -39,7 +39,7 @@ resource "aws_instance" "web_server" {
     instance_type    = "t2.micro"
 
     vps_security_group_ids   = [aws_security_group.web_sg.id]
-    user_data = <<- EQF
+    user_data = <<- EOF
                  #!/bin/bash
                  sudo apt-get update
                  sudo apt-get install -y docker.io
