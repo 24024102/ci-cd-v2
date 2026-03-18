@@ -48,7 +48,14 @@ resource "aws_instance" "web_server" {
                  sudo docker run -d -p 80:80 24024102/ci-cd-v2:latest
                  EQF
 
-}
+
 tags = {
-    
+    Name = "FastAPI-Prod-Server"
+  }
+}
+
+
+output "server_public_ip" {
+  description = "Public IP address of the web server"
+  value       = aws_instance.web_server.public_ip
 }
