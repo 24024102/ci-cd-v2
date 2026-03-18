@@ -34,26 +34,28 @@ resource "aws_security_group" "web_sg" {
   }
 }
 
+
 resource "aws_instance" "web_server" {
-    ami      = data.aws_ami.ubuntu.id
-    instance_type    = "t2.micro"
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
+  
+ 
+  vpc_security_group_ids = [aws_security_group.web_sg.id]
 
-    vps_security_group_ids   = [aws_security_group.web_sg.id]
-    user_data = <<- EOF
-                 #!/bin/bash
-                 sudo apt-get update
-                 sudo apt-get install -y docker.io
-                 sudo systemctl start docker
-                 sudo systemctl enable docker 
-                 sudo docker run -d -p 80:80 24024102/ci-cd-v2:latest
-                 EOF
+  
+  user_data = <<EOF
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo docker run -d -p 80:80 24024102/ci-cd-v2:latest
+EOF
 
-
-tags = {
+  tags = {
     Name = "FastAPI-Prod-Server"
   }
 }
-
 
 output "server_public_ip" {
   description = "Public IP address of the web server"
