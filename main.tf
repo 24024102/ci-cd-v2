@@ -46,7 +46,7 @@ resource "aws_instance" "web_server" {
                  sudo systemctl start docker
                  sudo systemctl enable docker 
                  sudo docker run -d -p 80:80 24024102/ci-cd-v2:latest
-                 EQF
+                 EOF
 
 
 tags = {
