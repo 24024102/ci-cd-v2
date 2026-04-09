@@ -1,4 +1,4 @@
-# DevOps Pipeline: FastAPI, Kubernetes, and Terraform
+Pipeline: FastAPI, Kubernetes, and Terraform
 
 This repository contains a full deployment pipeline for a Python FastAPI application connected to a Redis database. It demonstrates containerization, continuous integration/continuous deployment (CI/CD), Kubernetes orchestration, and AWS infrastructure provisioning.
 
